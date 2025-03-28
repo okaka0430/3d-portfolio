@@ -13,6 +13,19 @@ header {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+nav {
+  margin-top: 1rem;
+}
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+}
+nav a:hover {
+  color: #000;
+}
+
 h1 {
   margin: 0;
   font-size: 2rem;
@@ -52,6 +65,12 @@ h1 {
   font-size: 1.1rem;
   margin: 0;
   text-align: center;
+}
+
+.content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .modal {
