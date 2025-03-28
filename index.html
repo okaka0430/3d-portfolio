@@ -2,15 +2,19 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- メタデータと外部リソース -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3Dポートフォリオ</title>
+  <!-- フォントとスタイル -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papopLmJ6+KHjGb1rOZUpY7tr+MZgdyT9fCTZAzqvq1LdJAkZXQaz23+lBL1cVZcU/6PuyZR4cXtB1ER6z3K0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- アイコンとアニメーション -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
+  <!-- ヘッダー -->
   <header class="glass-header sticky">
     <h1>My 3D Portfolio</h1>
     <nav>
@@ -19,27 +23,50 @@
       <a href="contact.html">コンタクト</a>
     </nav>
   </header>
-  <section class="gallery">
-    <div class="card" onclick="openModal('model1.gltf')" data-aos="fade-up">
-      <img src="https://placehold.jp/300x200.png?text=3D+Art+Sample+1" alt="Model 1" />
-      <h2>作品1</h2>
+
+  <!-- カテゴリフィルター -->
+  <section class="filter-controls">
+    <button class="filter-btn active" data-filter="all">すべて</button>
+    <button class="filter-btn" data-filter="3d">3Dモデル</button>
+    <button class="filter-btn" data-filter="nft">NFTアート</button>
+    <button class="filter-btn" data-filter="web">Webデザイン</button>
+  </section>
+
+  <!-- ギャラリーグリッド -->
+  <section class="gallery" id="gallery">
+    <!-- 作品カード（各カテゴリに属する） -->
+    <div class="card 3d" data-aos="fade-up" onclick="openDetailModal('3Dモデル作品 1', 'これは3Dモデルのダミー作品です。', 'https://placehold.co/600x400?text=3D+Model+1', ['3D', 'デザイン'], 'https://example.com')">
+      <img src="https://placehold.co/300x200?text=3D+Model+1" alt="3D Model 1" />
+      <h2>3Dモデル作品 1</h2>
     </div>
-    <div class="card" onclick="openModal('model2.gltf')" data-aos="fade-up" data-aos-delay="100">
-      <img src="https://placehold.jp/300x200.png?text=3D+Art+Sample+2" alt="Model 2" />
-      <h2>作品2</h2>
+    <div class="card nft" data-aos="fade-up" onclick="openDetailModal('NFTアート作品 1', 'これはNFTアートのサンプルです。', 'https://placehold.co/600x400?text=NFT+Art+1', ['NFT', 'ブロックチェーン'], 'https://example.com')">
+      <img src="https://placehold.co/300x200?text=NFT+Art+1" alt="NFT Art 1" />
+      <h2>NFTアート作品 1</h2>
+    </div>
+    <div class="card web" data-aos="fade-up" onclick="openDetailModal('Webデザイン作品 1', 'Webサイト用にデザインされたコンセプト作品です。', 'https://placehold.co/600x400?text=Web+Design+1', ['HTML', 'CSS'], 'https://example.com')">
+      <img src="https://placehold.co/300x200?text=Web+Design+1" alt="Web Design 1" />
+      <h2>Webデザイン作品 1</h2>
     </div>
   </section>
-  <div id="modal" class="modal" onclick="closeModal()">
+
+  <!-- モーダル（詳細） -->
+  <div id="detail-modal" class="modal" onclick="closeDetailModal()">
     <div class="modal-inner" onclick="event.stopPropagation()">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <div id="model-viewer"></div>
+      <span class="close-btn" onclick="closeDetailModal()">&times;</span>
+      <img id="modal-img" src="" alt="詳細画像" />
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+      <div id="modal-tags" class="tags"></div>
+      <a id="modal-link" href="#" target="_blank" class="external-link">詳しく見る</a>
     </div>
   </div>
+
+  <!-- フッター -->
   <footer class="footer">
     <p>&copy; 2025 My 3D Portfolio</p>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- スクリプト読み込み -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
   <script src="main.js"></script>

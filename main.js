@@ -1,39 +1,37 @@
 
-function openModal(modelPath) {
-  const modal = document.getElementById('modal');
-  const container = document.getElementById('model-viewer');
-  modal.style.display = 'flex';
+// モーダルを開く（詳細）
+function openDetailModal(title, desc, imgSrc, tags, link) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-desc').textContent = desc;
+  document.getElementById('modal-img').src = imgSrc;
+  document.getElementById('modal-tags').innerHTML = tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+  document.getElementById('modal-link').href = link;
+  document.getElementById('detail-modal').style.display = 'flex';
+}
 
-  const width = container.clientWidth;
-  const height = 500;
+// モーダルを閉じる
+function closeDetailModal() {
+  document.getElementById('detail-modal').style.display = 'none';
+}
 
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-  camera.position.z = 2;
+// カテゴリフィルター（フェード付き）
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.gallery .card');
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(width, height);
-  container.innerHTML = '';
-  container.appendChild(renderer.domElement);
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-  const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
-  scene.add(light);
-
-  const loader = new THREE.GLTFLoader();
-  loader.load(modelPath, function (gltf) {
-    const model = gltf.scene;
-    scene.add(model);
-
-    function animate() {
-      requestAnimationFrame(animate);
-      model.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    }
-    animate();
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        card.style.opacity = 0;
+        setTimeout(() => {
+          card.style.display = (filter === 'all' || card.classList.contains(filter)) ? 'block' : 'none';
+          setTimeout(() => card.style.opacity = 1, 50);
+        }, 200);
+      });
+    });
   });
-}
-
-function closeModal() {
-  document.getElementById('modal').style.display = 'none';
-  document.getElementById('model-viewer').innerHTML = '';
-}
+});
