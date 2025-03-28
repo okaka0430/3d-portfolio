@@ -265,3 +265,69 @@ nav {
 nav a {
   margin: 0.5rem 1rem;
 }
+
+/* タグバッジスタイル */
+.card-tags, .tags {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tag {
+  background: #dbeafe;
+  color: #1e3a8a;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* フリーワード検索ボックス */
+.search-section {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+#search-input {
+  padding: 0.75rem 1rem;
+  width: 80%;
+  max-width: 400px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+#search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* カテゴリフィルタータブ */
+.filter-controls {
+  text-align: center;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: #f1f5f9;
+  color: #1e293b;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.filter-btn:hover {
+  background: #cbd5e1;
+}
+.filter-btn.active {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
