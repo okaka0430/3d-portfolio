@@ -331,3 +331,120 @@ nav a {
   color: white;
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
+
+/* --- ナビゲーション調整（スマホフレンドリー） --- */
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+header nav a {
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 600;
+  position: relative;
+  padding: 0.3rem;
+}
+header nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+header nav a:hover::after,
+header nav a.active::after {
+  width: 100%;
+}
+
+/* --- 検索ボックス強化 --- */
+.search-section {
+  text-align: center;
+  padding: 1rem;
+}
+#search-input {
+  width: 85%;
+  max-width: 400px;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background: #f9fafb url('https://cdn.jsdelivr.net/npm/@tabler/icons/icons/search.svg') no-repeat 10px center;
+  background-size: 20px;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+#search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+}
+
+/* --- カテゴリボタン演出付き --- */
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+.filter-btn {
+  background: #f3f4f6;
+  color: #334155;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.filter-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.filter-btn:hover {
+  background: #e2e8f0;
+}
+.filter-btn.active {
+  background: #3b82f6;
+  color: #fff;
+}
+.filter-btn.active::after {
+  width: 60%;
+}
+
+/* --- タグ色をカテゴリ別に --- */
+.card-tags .tag,
+#modal-tags .tag {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 0.4rem;
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+.card.3d .tag { background-color: #e0f2fe; color: #0284c7; }
+.card.nft .tag { background-color: #ede9fe; color: #7c3aed; }
+.card.web .tag { background-color: #dcfce7; color: #15803d; }
+
+/* --- セクション余白調整（スマホ対応） --- */
+.gallery {
+  padding: 1rem;
+}
+.gallery .card {
+  margin-bottom: 1.5rem;
+}
