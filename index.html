@@ -7,9 +7,10 @@
   <title>3Dポートフォリオ</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
-  <header>
+  <header class="sticky">
     <h1>My 3D Portfolio</h1>
     <nav>
       <a href="index.html">ギャラリー</a>
@@ -18,11 +19,11 @@
     </nav>
   </header>
   <section class="gallery">
-    <div class="card" onclick="openModal('model1.gltf')">
+    <div class="card" onclick="openModal('model1.gltf')" data-aos="fade-up">
       <img src="thumbnail1.jpg" alt="Model 1">
       <h2>作品1</h2>
     </div>
-    <div class="card" onclick="openModal('model2.gltf')">
+    <div class="card" onclick="openModal('model2.gltf')" data-aos="fade-up" data-aos-delay="100">
       <img src="thumbnail2.jpg" alt="Model 2">
       <h2>作品2</h2>
     </div>
@@ -34,6 +35,9 @@
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
   <script src="main.js"></script>
 </body>
 </html>
