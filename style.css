@@ -226,3 +226,27 @@ nav a:hover::after {
   background: #e0f2fe;
   color: #111;
 }
+
+/* Adjusted spacing for more compact layout */
+.gallery {
+  padding: 2rem 1rem;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+.social-cards {
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+.social-card {
+  padding: 1rem 1.5rem;
+  width: 160px;
+}
