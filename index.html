@@ -2,15 +2,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3Dポートフォリオ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papopLmJ6+KHjGb1rOZUpY7tr+MZgdyT9fCTZAzqvq1LdJAkZXQaz23+lBL1cVZcU/6PuyZR4cXtB1ER6z3K0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
-  <header class="sticky">
+  <header class="glass-header sticky">
     <h1>My 3D Portfolio</h1>
     <nav>
       <a href="index.html">ギャラリー</a>
@@ -20,11 +21,11 @@
   </header>
   <section class="gallery">
     <div class="card" onclick="openModal('model1.gltf')" data-aos="fade-up">
-      <img src="thumbnail1.jpg" alt="Model 1">
+      <img src="https://placehold.jp/300x200.png?text=3D+Art+Sample+1" alt="Model 1" />
       <h2>作品1</h2>
     </div>
     <div class="card" onclick="openModal('model2.gltf')" data-aos="fade-up" data-aos-delay="100">
-      <img src="thumbnail2.jpg" alt="Model 2">
+      <img src="https://placehold.jp/300x200.png?text=3D+Art+Sample+2" alt="Model 2" />
       <h2>作品2</h2>
     </div>
   </section>
@@ -34,6 +35,9 @@
       <div id="model-viewer"></div>
     </div>
   </div>
+  <footer class="footer">
+    <p>&copy; 2025 My 3D Portfolio</p>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

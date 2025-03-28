@@ -250,3 +250,18 @@ footer {
   padding: 1rem 1.5rem;
   width: 160px;
 }
+
+/* Responsive header adjustments */
+header {
+  flex-direction: column;
+  text-align: center;
+}
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav a {
+  margin: 0.5rem 1rem;
+}
