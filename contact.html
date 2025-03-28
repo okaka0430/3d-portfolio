@@ -2,16 +2,17 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>コンタクト</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
-  <header class="sticky">
-    <h1>コンタクト</h1>
+  <header class="glass-header sticky">
+    <h1>Contact</h1>
     <nav>
       <a href="index.html">ギャラリー</a>
       <a href="about.html">自己紹介</a>
@@ -21,13 +22,22 @@
   <section class="content" data-aos="fade-up">
     <h2>ご連絡・SNS</h2>
     <p>お気軽にお問い合わせください！</p>
-    <div class="contact-cards">
-      <a href="mailto:yourname@example.com" class="contact-card">メールで連絡</a>
-      <a href="https://twitter.com/youraccount" target="_blank" class="contact-card">Twitter</a>
-      <a href="https://instagram.com/youraccount" target="_blank" class="contact-card">Instagram</a>
+    <div class="social-cards">
+      <a href="mailto:yourname@example.com" class="social-card">
+        <i class="fas fa-envelope"></i>
+        <span>メール</span>
+      </a>
+      <a href="https://twitter.com/youraccount" target="_blank" class="social-card">
+        <i class="fab fa-twitter"></i>
+        <span>Twitter</span>
+      </a>
+      <a href="https://instagram.com/youraccount" target="_blank" class="social-card">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
     </div>
   </section>
-  <footer>
+  <footer class="footer">
     <p>&copy; 2025 My 3D Portfolio</p>
   </footer>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
