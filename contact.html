@@ -7,9 +7,10 @@
   <title>コンタクト</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
-  <header>
+  <header class="sticky">
     <h1>コンタクト</h1>
     <nav>
       <a href="index.html">ギャラリー</a>
@@ -17,14 +18,19 @@
       <a href="contact.html">コンタクト</a>
     </nav>
   </header>
-  <section class="content">
-    <h2>お問い合わせ・SNS</h2>
-    <p>ご連絡は以下の方法でお気軽にどうぞ！</p>
-    <ul>
-      <li><a href="mailto:yourname@example.com">メールを送る</a></li>
-      <li><a href="https://twitter.com/youraccount" target="_blank">Twitter</a></li>
-      <li><a href="https://instagram.com/youraccount" target="_blank">Instagram</a></li>
-    </ul>
+  <section class="content" data-aos="fade-up">
+    <h2>ご連絡・SNS</h2>
+    <p>お気軽にお問い合わせください！</p>
+    <div class="contact-cards">
+      <a href="mailto:yourname@example.com" class="contact-card">メールで連絡</a>
+      <a href="https://twitter.com/youraccount" target="_blank" class="contact-card">Twitter</a>
+      <a href="https://instagram.com/youraccount" target="_blank" class="contact-card">Instagram</a>
+    </div>
   </section>
+  <footer>
+    <p>&copy; 2025 My 3D Portfolio</p>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
