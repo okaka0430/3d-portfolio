@@ -448,3 +448,30 @@ header nav a.active::after {
 .gallery .card {
   margin-bottom: 1.5rem;
 }
+
+
+/* --- 修正: ナビゲーションの下線アニメーションを無効化 --- */
+header nav a::after {
+  display: none !important;
+}
+
+/* --- 修正: ヘッダー・検索ボックス・カテゴリ周辺の余白を調整 --- */
+header {
+  padding: 1rem 1rem 0.5rem !important;
+}
+.search-section {
+  padding: 0.5rem 1rem !important;
+}
+.filter-controls {
+  padding: 0.5rem 1rem !important;
+  gap: 0.5rem;
+}
+.gallery {
+  padding-top: 0.5rem !important;
+}
+
+/* --- 修正: タグ表示に内側余白を追加し、枠との距離を確保 --- */
+.card-tags {
+  margin-top: 0.4rem;
+  padding: 0.3rem 0.6rem 0.6rem;
+}
