@@ -606,3 +606,54 @@ header nav {
   font-weight: 500;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
+
+
+/* === ハンバーガーメニュー＆タイトル横並び === */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.hamburger span {
+  height: 3px;
+  width: 22px;
+  background: #1f2937;
+  margin: 3px 0;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* === タグ横並び4つまで対応 === */
+.card-tags {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem 0.6rem;
+  overflow-x: auto;
+}
