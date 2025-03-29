@@ -659,19 +659,20 @@ header nav {
 }
 
 
-/* --- ハンバーガーを右端に配置 & ヘッダーとの間の隙間を解消 --- */
-.header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  width: 100%;
-}
+/* === 洗練されたハンバーガーメニューとリッチなメニュー表示 === */
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  margin-left: auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.hamburger:hover {
+  background-color: #f3f4f6;
 }
 .hamburger span {
   height: 3px;
@@ -679,27 +680,45 @@ header nav {
   background: #1f2937;
   margin: 3px 0;
   border-radius: 3px;
+  transition: all 0.3s ease;
 }
 
-/* --- モバイルナビ展開の隙間を解消し、右端から出現するように調整 --- */
+/* モバイルメニュー調整 */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+    margin-left: auto;
   }
   .nav-links {
     display: none;
     flex-direction: column;
     align-items: center;
-    background: white;
+    background: #ffffff;
     width: 100%;
     position: absolute;
     top: 100%;
     left: 0;
-    padding: 0.8rem 0 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-top: 0; /* 隙間解消 */
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 99;
+    border-top: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
   }
   .nav-links.active {
     display: flex;
+  }
+  .nav-links a {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1f2937;
+    transition: background 0.3s;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-links a:hover {
+    background-color: #f9fafb;
+    color: #111827;
   }
 }
