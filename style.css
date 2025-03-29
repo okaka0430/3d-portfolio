@@ -1,35 +1,333 @@
 
-/* ナビゲーションの下線アニメーション削除 */
-header nav a::after {
-  display: none;
+:root {
+  --primary: #f3f4f6;
+  --accent: #a3cef1;
+  --text: #333;
 }
 
-/* ヘッダー、検索、カテゴリの余白を縮小 */
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+  background: var(--primary);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
 header {
-  padding: 1rem 1rem 0.5rem;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
-header h1 {
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  font-weight: 600;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+h1 {
   font-size: 1.5rem;
-  margin-bottom: 0.3rem;
+  margin: 0;
 }
-.search-section {
-  padding: 0.5rem 1rem 0.5rem;
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
 }
-.filter-controls {
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 260px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.card img {
+  width: 100%;
+  display: block;
+}
+.card h2 {
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal-inner {
+  background: white;
+  border-radius: 16px;
+  width: 80%;
+  max-width: 800px;
+  padding: 1rem;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f0f0f0;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 4rem;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.skills {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.skills li {
+  background: var(--accent);
+  color: #fff;
   padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.contact-card {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  position: relative;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #7ec8e3, #89b5f7);
+  transition: width 0.3s ease;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+.footer {
+  background: linear-gradient(to right, #f3f4f6, #dbeafe);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 4rem;
+}
+
+.social-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.social-card {
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  text-align: center;
+  width: 180px;
+  transition: all 0.3s ease;
+}
+.social-card i {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  background: #e0f2fe;
+  color: #111;
+}
+
+/* Adjusted spacing for more compact layout */
+.gallery {
+  padding: 2rem 1rem;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+.social-cards {
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+.social-card {
+  padding: 1rem 1.5rem;
+  width: 160px;
+}
+
+/* Responsive header adjustments */
+header {
+  flex-direction: column;
+  text-align: center;
+}
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav a {
+  margin: 0.5rem 1rem;
+}
+
+/* タグバッジスタイル */
+.card-tags, .tags {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
-
-/* ギャラリーの余白調整 */
-.gallery {
-  padding: 0.5rem 1rem;
+.tag {
+  background: #dbeafe;
+  color: #1e3a8a;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
 }
-.gallery .card {
-  margin-bottom: 1.2rem;
+
+/* フリーワード検索ボックス */
+.search-section {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+#search-input {
+  padding: 0.75rem 1rem;
+  width: 80%;
+  max-width: 400px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+#search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
-/* タグに内側の余白を追加して、カードの中でバランスをとる */
-.card-tags {
-  margin-top: 0.4rem;
-  padding: 0 0.5rem 0.5rem;
+/* カテゴリフィルタータブ */
+.filter-controls {
+  text-align: center;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: #f1f5f9;
+  color: #1e293b;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.filter-btn:hover {
+  background: #cbd5e1;
+}
+.filter-btn.active {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
