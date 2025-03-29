@@ -527,3 +527,29 @@ header h1 {
   font-weight: 600;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
+
+
+/* === スマホ表示時のヘッダーサイズ最適化（高さを抑えてバランス調整） === */
+header {
+  padding: 0.6rem 1rem 0.4rem;
+}
+header h1 {
+  font-size: 1.4rem;
+  margin-bottom: 0.1rem;
+}
+header nav {
+  font-size: 0.95rem;
+  gap: 0.6rem;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+/* === カテゴリ選択時の色を目立ちすぎない落ち着いた色に変更 === */
+.filter-btn.active {
+  background: #64748b; /* slate色で落ち着いたグレー青系 */
+  color: white;
+  box-shadow: 0 3px 8px rgba(100, 116, 139, 0.4);
+}
+.filter-btn:hover {
+  background: #cbd5e1;
+}
