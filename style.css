@@ -657,3 +657,49 @@ header nav {
   padding: 0.4rem 0.6rem 0.6rem;
   overflow-x: auto;
 }
+
+
+/* --- ハンバーガーを右端に配置 & ヘッダーとの間の隙間を解消 --- */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+}
+.hamburger span {
+  height: 3px;
+  width: 24px;
+  background: #1f2937;
+  margin: 3px 0;
+  border-radius: 3px;
+}
+
+/* --- モバイルナビ展開の隙間を解消し、右端から出現するように調整 --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0.8rem 0 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 99;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+}
