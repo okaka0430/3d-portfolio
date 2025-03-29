@@ -45,3 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     filterAndSearch();  // 入力のたびに再表示
   });
 });
+
+function toggleMenu() {
+  const nav = document.querySelector('.nav-links');
+  nav.classList.toggle('active');
+}
