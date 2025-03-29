@@ -475,3 +475,55 @@ header {
   margin-top: 0.4rem;
   padding: 0.3rem 0.6rem 0.6rem;
 }
+
+
+/* === 修正: ナビゲーションの下線を無効化 === */
+header nav a::after {
+  display: none !important;
+}
+
+/* === 修正: スマホでも作品が見えるようにヘッダー周辺の余白を最適化 === */
+header {
+  padding: 0.8rem 1rem 0.3rem;
+}
+header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.2rem;
+}
+.search-section {
+  padding: 0.3rem 1rem 0.5rem;
+}
+#search-input {
+  padding: 0.5rem 1rem 0.5rem 2.2rem;
+  font-size: 0.9rem;
+}
+.filter-controls {
+  padding: 0.4rem 1rem;
+  gap: 0.4rem;
+}
+
+/* === ギャラリー余白最適化 === */
+.gallery {
+  padding-top: 0.2rem;
+}
+.gallery .card {
+  margin-bottom: 1.2rem;
+}
+
+/* === 修正: タグに内側余白と下マージンをつけて、整った見た目に === */
+.card-tags {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.7rem 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.tag {
+  background-color: #eef2ff;
+  color: #3730a3;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
